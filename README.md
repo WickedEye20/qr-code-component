@@ -1,6 +1,6 @@
 # Getting Started with React App
 
-This a practice project built on react.
+This is a practice project built on react.
 
 ## Live Site Link
 
