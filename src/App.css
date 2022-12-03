@@ -1,38 +1,141 @@
-.App {
+:root {
+  /* Primary Colors */
+  --color-primary-500: hsl(0, 0%, 100%);
+  --color-secondary-200: hsl(212, 45%, 89%);
+  --color-secondary-400: hsl(220, 15%, 55%);
+  --color-secondary-900: hsl(218, 44%, 22%);
+
+  /* Font Size */
+  --font-bold: 400;
+  --font-bolder: 700;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    3. Allow percentage-based heights in the application
+  */
+html {
+  height: 100%;
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body{
+  font-family: 'Outfit', sans-serif;
+  background: var(--color-secondary-200);
+  height: 100%;
+}
+
+#qr_main{
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding: 1.75rem;
+
+}
+
+.qr_class{
+  max-width: calc(375px - 2.75rem);
+  padding: 1rem;
+  background: var(--color-primary-500);
+  border-radius: 1rem;
+  display: grid;
+  gap: 1.5rem;
+  box-shadow: 0px 4px 20px hsla(0, 0%, 0%, 0.15);
+}
+
+.qr_class img{
+  border-radius: 0.75rem;
+}
+
+.qr_content{
+  padding: 0 0.5rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.qr_content .head{
+  font-size: 1.375rem;
+  line-height: 1.3;
+  color: var(--color-secondary-900);
+  font-weight: var(--font-bolder);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.qr_content p{
+  padding: 1rem 0;
+  line-height: 1.3;
+  color: var(--color-secondary-400);
+  font-size: 0.958rem;
+}
+
+@media (min-width: 376px) and (max-width: 430px){
+  #qr_main{
+    padding: 3rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (min-width: 1440px){
+  .qr_content{
+    padding: 0 1rem;
   }
 }
