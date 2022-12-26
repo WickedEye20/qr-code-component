@@ -1,6 +1,6 @@
 # Getting Started with React App
 
-This is a practice project built on react.
+This is a practice project built on react and sass.
 
 ## Live Site Link
 
