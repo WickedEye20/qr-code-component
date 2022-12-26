@@ -1,13 +1,13 @@
-:root {
-  /* Primary Colors */
-  --color-primary-500: hsl(0, 0%, 100%);
-  --color-secondary-200: hsl(212, 45%, 89%);
-  --color-secondary-400: hsl(220, 15%, 55%);
-  --color-secondary-900: hsl(218, 44%, 22%);
+$color-primary-500: hsl(0, 0%, 100%);
+$color-secondary-200: hsl(212, 45%, 89%);
+$color-secondary-400: hsl(220, 15%, 55%);
+$color-secondary-900: hsl(218, 44%, 22%);
+$font-bold: 400;
+$font-bolder: 700;
+$height: 100%;
 
-  /* Font Size */
-  --font-bold: 400;
-  --font-bolder: 700;
+@mixin display {
+  display: grid;
 }
 
 /*
@@ -28,7 +28,7 @@
     3. Allow percentage-based heights in the application
   */
 html {
-  height: 100%;
+  height: $height;
 }
 /*
     Typographic tweaks!
@@ -81,61 +81,60 @@ h6 {
   isolation: isolate;
 }
 
-body{
-  font-family: 'Outfit', sans-serif;
-  background: var(--color-secondary-200);
-  height: 100%;
+body {
+  font-family: "Outfit", sans-serif;
+  background: $color-secondary-200;
+  height: $height;
 }
 
-#qr_main{
-  display: grid;
+#qr_main {
+  @include display;
   place-items: center;
-  height: 100%;
+  height: $height;
   padding: 1.75rem;
-
-}
-
-.qr_class{
-  max-width: calc(375px - 2.75rem);
-  padding: 1rem;
-  background: var(--color-primary-500);
-  border-radius: 1rem;
-  display: grid;
-  gap: 1.5rem;
-  box-shadow: 0px 4px 20px hsla(0, 0%, 0%, 0.15);
-}
-
-.qr_class img{
-  border-radius: 0.75rem;
-}
-
-.qr_content{
-  padding: 0 0.5rem;
-  text-align: center;
-}
-
-.qr_content .head{
-  font-size: 1.375rem;
-  line-height: 1.3;
-  color: var(--color-secondary-900);
-  font-weight: var(--font-bolder);
-}
-
-.qr_content p{
-  padding: 1rem 0;
-  line-height: 1.3;
-  color: var(--color-secondary-400);
-  font-size: 0.958rem;
-}
-
-@media (min-width: 376px) and (max-width: 430px){
-  #qr_main{
+  @media (min-width: 376px) and (max-width: 430px) {
     padding: 3rem;
   }
 }
 
-@media (min-width: 1440px){
-  .qr_content{
+.qr_class {
+  max-width: calc(375px - 2.75rem);
+  padding: 1rem;
+  background: $color-primary-500;
+  border-radius: 1rem;
+  @include display;
+  gap: 1.5rem;
+  box-shadow: 0px 4px 20px hsla(0, 0%, 0%, 0.15);
+}
+
+.qr_class {
+  img {
+    border-radius: 0.75rem;
+  }
+}
+
+.qr_content {
+  padding: 0 0.5rem;
+  text-align: center;
+  @media (min-width: 1440px) {
     padding: 0 1rem;
+  }
+}
+
+.qr_content {
+  .head {
+    font-size: 1.375rem;
+    line-height: 1.3;
+    color: $color-secondary-900;
+    font-weight: $font-bolder;
+  }
+}
+
+.qr_content {
+  p {
+    padding: 1rem 0;
+    line-height: 1.3;
+    color: $color-secondary-400;
+    font-size: 0.958rem;
   }
 }
